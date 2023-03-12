@@ -1,8 +1,6 @@
-import { atom } from "recoil"
+// import { atom } from "recoil"
 
-export const PackageData = atom({
-    key : 'PackageData',
-     default : [
+export const PackageData =  [
     {
      id:1,   
      name : 'lodash',
@@ -250,4 +248,4 @@ export const PackageData = atom({
        },
 ]
 
-})
+

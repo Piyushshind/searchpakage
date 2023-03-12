@@ -3,10 +3,9 @@ import styles from './IndexPage.module.css';
 import CustomInput from '../../Componants/Atoms/MyInput/CustomInput'
 import CustomButton from '../../Componants/Atoms/MyButton/CustomButton'
 import { PackageData } from '../../Data/PakcageData';
-import { useRecoilState } from 'recoil';
 
 const IndexPage = () => {
-  const [data,setData] = useRecoilState(PackageData);
+  const [data,setData] = useState(PackageData);
   return (
     <>
       <div className={styles.mainDiv} >
@@ -23,16 +22,20 @@ const IndexPage = () => {
               <th> Favorite </th>
               <th> Delete </th>
             </tr>
-           {data.map(item =>
-            <>
-             <tr>
+           {data.map(item =>{
+            return (
+           
+           
+            
+             <tr key={item.id}>
               <td>{item.id}</td>
               <td>{item.name}</td>
               <td>{item.discribtion}</td>
               <td> <CustomButton btnText='Favorite'/></td>
               <td><CustomButton btnText='Delete'/></td>
              </tr>
-            </>
+            
+            )}
             )}
 
           </table>
