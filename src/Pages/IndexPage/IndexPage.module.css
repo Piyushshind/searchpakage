@@ -1,0 +1,11 @@
+.SearchInput{
+    width: 80rem;
+    height: 2.6rem;
+}
+.searchBardiv{
+
+}
+.mainDiv{
+    display: flex;
+    justify-content: center;
+}
