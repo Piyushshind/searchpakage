@@ -15,7 +15,12 @@ const IndexPage = () => {
    })
    setData(searchData)
   }
-
+  
+  function handleDelete(id){
+      setData(data.filter((packages)=>{
+        return packages.id !== id
+      }))
+  }
   return (
     <>
       <div className={styles.mainDiv} >
@@ -32,7 +37,7 @@ const IndexPage = () => {
               <th> Favorite </th>
               <th> Delete </th>
             </tr>
-           {data.map(item =>{
+           {data.map((item) =>{
             return (
            
            
@@ -42,7 +47,7 @@ const IndexPage = () => {
               <td>{item.name}</td>
               <td>{item.discribtion}</td>
               <td> <CustomButton btnText='Favorite'/></td>
-              <td><CustomButton btnText='Delete'/></td>
+              <td><CustomButton btnText='Delete' onClick={()=>handleDelete(item.id)}/></td>
              </tr>
             
             )}
