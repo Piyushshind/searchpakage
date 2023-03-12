@@ -6,12 +6,22 @@ import { PackageData } from '../../Data/PakcageData';
 
 const IndexPage = () => {
   const [data,setData] = useState(PackageData);
+  const [searchInput,setSearchInput] = useState('');
+  
+  function handleInput(e){
+  setSearchInput(e.target.value)
+   const searchData = data.filter((packages)=> {
+    return packages.name.toLowerCase().startsWith(searchInput.toLowerCase())
+   })
+   setData(searchData)
+  }
+
   return (
     <>
       <div className={styles.mainDiv} >
         <div className={styles.searchBardiv}>
           <h2>Search for npm package</h2>
-          <CustomInput className={styles.SearchInput}/>
+          <CustomInput className={styles.SearchInput} onChange={handleInput} value={searchInput}/>
         </div>
          <div className={styles.package_list_div}>
           <table border='1'>
