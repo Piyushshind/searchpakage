@@ -29,7 +29,7 @@ const IndexPage = () => {
     let favoriteData = data.filter((packages)=>{
       return packages.id ==id 
      })
-     setCartData([...cartData ,...favoriteData])
+     setCartData([...cartData ,favoriteData])
   }
   return (
     <>
@@ -44,7 +44,7 @@ const IndexPage = () => {
             <tr>
               <th>Sr.No</th>
               <th> Package </th>
-              <th> Dicription </th>
+              <th> Discription </th>
               <th> Favorite </th>
               <th> Delete </th>
             </tr>

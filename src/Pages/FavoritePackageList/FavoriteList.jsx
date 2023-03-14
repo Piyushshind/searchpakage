@@ -9,9 +9,10 @@ const FavoriteList = () => {
     
 
     function handleDelete(id){
-      setCartData(cartData.filter((packages)=>{
+      const ram = (cartData.filter((packages)=>{
         return packages.id !== id
       }))
+      setCartData(ram)
   }
   return (
     <>
